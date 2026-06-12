@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>✨ A Câmera de Lembranças</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Fundo mágico de partículas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <!-- Névoa mágica -->
+  <div class="mist mist-a" aria-hidden="true"></div>
+  <div class="mist mist-b" aria-hidden="true"></div>
+  <!-- Camada de brilhos do mouse -->
+  <div id="sparkle-layer" aria-hidden="true"></div>
+
+  <!-- Tela de carregamento: abertura de câmera -->
+  <div id="loader">
+    <div class="aperture">
+      <div class="aperture-ring"></div>
+      <div class="blade b1"></div>
+      <div class="blade b2"></div>
+      <div class="blade b3"></div>
+      <div class="blade b4"></div>
+      <div class="blade b5"></div>
+      <div class="blade b6"></div>
+      <div class="aperture-glow"></div>
+    </div>
+    <p class="loader-text">revelando lembranças…</p>
+  </div>
+
+  <!-- Palco principal das fases -->
+  <main id="stage" aria-live="polite"></main>
+
+  <!-- Modal da dica -->
+  <div id="hint-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <div class="modal-seal" aria-hidden="true"></div>
+      <p id="hint-text" class="modal-text"></p>
+      <button id="hint-close" class="btn-ghost" type="button">fechar</button>
+    </div>
+  </div>
+
+  <!-- Flash da câmera -->
+  <div id="flash" aria-hidden="true"></div>
+
+  <!-- Galeria final -->
+  <section id="gallery" class="hidden" aria-label="Galeria de fotos">
+    <div id="gallery-field"></div>
+    <div id="final-message" class="hidden">
+      <p>Todas essas fotos mostram a pessoa única que você é para mim. Acredite sempre em si mesma, pois você é a melhor pessoa que já passou por esse mundo todo. Te amo.</p>
+    </div>
+    <button id="message-again" class="hidden" type="button" title="ver a mensagem de novo" aria-label="ver a mensagem de novo">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 20.5s-7.8-4.9-9.5-9.2C1 7.4 3.6 4.5 6.7 4.5c2 0 3.6 1.1 4.4 2.7l.9 1.7.9-1.7c.8-1.6 2.4-2.7 4.4-2.7 3.1 0 5.7 2.9 4.2 6.8-1.7 4.3-9.5 9.2-9.5 9.2z"/>
+      </svg>
+    </button>
+  </section>
+
+  <!-- Lightbox de foto -->
+  <div id="lightbox" class="hidden" role="dialog" aria-modal="true">
+    <button id="lb-close" type="button" aria-label="fechar">✕</button>
+    <button id="lb-prev" type="button" aria-label="anterior">‹</button>
+    <figure class="lb-frame">
+      <img id="lb-img" alt="nossa foto" />
+    </figure>
+    <button id="lb-next" type="button" aria-label="próxima">›</button>
+  </div>
+
+  <script src="js/photos.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
