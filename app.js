@@ -29,7 +29,7 @@
       kicker: "A Luz Escura",
       accent: ROXO,
       text: ["Bem-vinda, senhorita Gabriela Kussuki. Por favor, digite a senha."],
-      hint: "Uma das minhas caixas de amor tinha coisas escondidas, e elas só poderiam ser vistas na mais escura das luzes... Será que tem algo escondido também nessas fotos aí com você?",
+      hint: "A senha além de desbloquear o nosso amor desbloqueia os nossos notebooks.",
       check: function (v) { return digits(v) === "22072022"; },
     },
     {
